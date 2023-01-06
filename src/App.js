@@ -1,10 +1,13 @@
 import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import AddMovie from './Components/AddMovie';
 import FilterMovie from './Components/FilterMovie';
 import ListMovies from './Components/ListMovies';
-import NavMovies from './Components/NavMovies'
+import NavMovies from './Components/NavMovies';
+import Movie from './Components/Movie';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App() {
   const [movies,setMovies] = useState(
     [
@@ -22,6 +25,11 @@ function App() {
   return (
    <div>
         <NavMovies/>
+        <Routes>
+        <Route path='/movie' element={<Movie movies={movies}/>}/>
+        <Route path='/movie/:id' element={<Movie movies={movies}/>}/>
+        </Routes>
+
         <br/>
         <div className='etoile'>
         <FilterMovie setTitre={setTitre} setEtoile={setEtoile} titre={titre} etoile={etoile}/>
