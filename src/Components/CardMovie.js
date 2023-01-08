@@ -20,7 +20,7 @@ const CardMovie=({el,movies,setMovies})=>{
   
         </Card.Text>
         <Button variant="outline-danger" onClick={()=> handleDelete(el.id)}>Delete</Button>
-        <Link to="/Movie"><Button className='watchnow' variant="outline-danger"> Watch now !</Button></Link>
+        <Link to={`/Movie/${el.id}`}><Button className='watchnow' variant="outline-danger"> Watch now !</Button></Link>
 
       </Card.Body>
     </Card>

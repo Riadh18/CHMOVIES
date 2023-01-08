@@ -1,16 +1,21 @@
-import { Link, useParams } from "react-router-dom"
+import {useParams } from "react-router-dom"
 
 
 const Movie=({movies})=>{
+    
     const {id} = useParams()
-    const found = movies.find(el=> el.id === id)
-    console.log(found)
+    
+    const found = movies.find(el=> el.id === Number(id))
+   
    
     return(
         <div>
-            <h3>{found.description}</h3>
-            <h4>{found.posterURL}</h4>
-            <a><Link to='/'>Return Home</Link></a>
+            <h1>{found.title}</h1>
+            <h2>Trailer :</h2>
+            <h1>{found.Trailer}</h1>
+
+    
+           
         </div>
     )
 }
